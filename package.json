@@ -1,0 +1,23 @@
+{
+  "name": "pluralsight-electron",
+  "version": "1.0.0",
+  "description": "https://app.pluralsight.com/player?course=electron-fundamentals&amp;author=jake-trent&amp;name=electron-fundamentals-m2&amp;clip=0&amp;mode=live",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasjaviluna/pluralsight-electron.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasjaviluna/pluralsight-electron/issues"
+  },
+  "homepage": "https://github.com/lucasjaviluna/pluralsight-electron#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13"
+  }
+}
