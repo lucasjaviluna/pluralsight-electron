@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./capture.css" media="screen" title="no title" charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="videoContainer">
+        <canvas id="canvas" class="canvas" width="853" height="480"></canvas>
+        <video id="video" class="video" width="853" height="480" autoplay="true"></video>
+      </div>
+
+      <div class="recordContainer">
+        <button id="record" class="record" aria-label="Snap photo"></button>
+      </div>
+
+      <div id="photos" class="photosContainer"></div>
+
+    </div>
+
+    <div class="counterContainer">
+      <div id="counter" class="counter"></div>
+    </div>
+
+    <div id="flash" class="flash"></div>
+
+    <!-- <script src="../vendor/seriously/seriously.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.ascii.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.daltonize.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.filmgrain.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.hex.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.kaleidoscope.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.mirror.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.nightvision.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.pixelate.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.ripple.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.scanlines.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.sketch.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.vibrance.js"></script>
+    <script src="../vendor/seriously/effects/serioulsy.vignette.js"></script> -->
+    <script>require('./capture');</script>
+
+  </body>
+</html>
