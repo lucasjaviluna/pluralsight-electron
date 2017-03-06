@@ -1,13 +1,17 @@
-navigator.getUserMedia = navigator.webkitGetUserMedia;
-
 const video = require('./video');
 
-function handleSuccess(videoEl, stream) {
-  videoEl.src = window.URL.createObjectURL(stream);
-}
+function formatImgTag(doc, bytes) {
+  const div = doc.createElement('div');
+  div.classList.add('photo');
+  const close = doc.createElement('div');
+  close.classList.add('photoClose');
+  const img = new Image();
+  img.classList.add('photoImg');
+  img.src = bytes;
+  div.appendChild(img);
+  div.appendChild(close);
 
-function handleError(error) {
-  console.log('Camera error', error);
+  return div;
 }
 
 window.addEventListener('DOMContentLoaded', _ => {
@@ -17,19 +21,13 @@ window.addEventListener('DOMContentLoaded', _ => {
   const photosEl = document.querySelector('.photosContainer');
   const counterEl = document.getElementById('counter');
 
+  //context
+  const ctx = canvasEl.getContext('2d');
+
   video.init(navigator, videoEl);
 
-  const constraints = {
-    audio: false,
-    video: {
-      mandatory: {
-        minWidth: 353,
-        minHeight: 280,
-        maxWidth: 353,
-        maxHeight: 280,
-      }
-    }
-  };
-
-  navigator.getUserMedia(constraints, stream => handleSuccess(videoEl, stream), handleError);
+  recordEl.addEventListener('click', _ => {
+    const bytes = video.captureBytes(videoEl, ctx, canvasEl);
+    photosEl.appendChild(formatImgTag(document, bytes));
+  });
 });
